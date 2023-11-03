@@ -27,7 +27,17 @@ public class InventoryItem extends AbstractItem {
         this.quantity = quantity;
     }
 
-    // Concrete implementation of displayDescription() from AbstractItem
+    public String toCSV() {
+        // Convert the attributes of InventoryItem to a CSV formatted string
+        return String.join(",", itemID, getName(), String.valueOf(getPrice()), String.valueOf(quantity));
+    }
+
+    public static InventoryItem fromCSV(String csv) {
+        // Split the CSV formatted string and create a new InventoryItem
+        String[] attributes = csv.split(",");
+        return new InventoryItem(attributes[0], attributes[1], Double.parseDouble(attributes[2]), attributes[0], Integer.parseInt(attributes[3]));
+    }
+
     @Override
     public void displayDescription() {
         System.out.println("Item ID: " + getItemID() + ", Name: " + getName() + ", Price: " + getPrice() + ", Quantity: " + getQuantity());

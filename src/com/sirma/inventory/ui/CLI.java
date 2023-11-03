@@ -13,7 +13,7 @@ public class CLI {
     private Scanner scanner = new Scanner(System.in);
 
     public CLI() {
-        this.inventory = FileIOUtility.loadInventoryFromFile("data.csv");
+        this.inventory = FileIOUtility.loadInventoryFromFile("src/com/sirma/inventory/ui/data.csv");
     }
 
     public void start() {
@@ -67,8 +67,6 @@ public class CLI {
 
         System.out.print("Quantity: ");
         int quantity = scanner.nextInt();
-
-        // You might also want to add prompts for other attributes like category, isBreakable, etc.
 
         InventoryItem newItem = new InventoryItem(itemID, name, price, itemID, quantity);
         inventory.add(newItem);
