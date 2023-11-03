@@ -1,21 +1,21 @@
-itemID,Name,Price,Category,isBreakable,isPerishable,Quantity,ExpirationDate,FragileCareInstructions
-1,Apple,0.5,Grocery,False,True,100,2023-12-01,
-2,Banana,0.3,Grocery,False,True,150,2023-12-07,
-3,Orange,0.7,Grocery,False,True,80,2023-12-05,
-4,Milk,1.2,Grocery,False,True,50,2023-11-30,
-5,Bread,2.0,Grocery,False,True,30,2023-12-02,
-6,Cheese,5.0,Grocery,False,True,20,2023-12-15,
-7,LED TV,300,Electronics,True,False,10,,Handle with care
-8,Laptop,700,Electronics,True,False,5,,Handle with care
-9,Mobile Phone,500,Electronics,True,False,15,,Handle with care
-10,Headphones,50,Electronics,True,False,25,,Handle with care
-11,Glass Vase,20,Home,True,False,40,,Handle with care
-12,Picture Frame,10,Home,True,False,30,,Handle with care
-13,Ceramic Vase,25,Home,True,False,20,,Handle with care
-14,Wine Glasses,30,Home,True,False,50,,Handle with care
-15,Plate Set,100,Home,True,False,10,,Handle with care
-16,Chicken,10,Grocery,False,True,30,2023-11-25,
-17,Beef,20,Grocery,False,True,20,2023-11-28,
-18,Pork,15,Grocery,False,True,25,2023-11-27,
-19,Fish,12,Grocery,False,True,20,2023-11-26,
-20,Eggs,3,Grocery,False,True,100,2023-12-03,
+itemID,Name,Price,Category,isBreakable,isPerishable,Quantity
+1,Apple,0.5,Grocery,False,True,100
+2,Banana,0.3,Grocery,False,True,150
+3,Orange,0.7,Grocery,False,True,80
+4,Milk,1.2,Grocery,False,True,50
+5,Bread,2.0,Grocery,False,True,30
+6,Cheese,5.0,Grocery,False,True,20
+7,LED TV,300,Electronics,True,False,10
+8,Laptop,700,Electronics,True,False,5
+9,Mobile Phone,500,Electronics,True,False,15
+10,Headphones,50,Electronics,True,False,25
+11,Glass Vase,20,Home,True,False,40
+12,Picture Frame,10,Home,True,False,30
+13,Ceramic Vase,25,Home,True,False,20
+14,Wine Glasses,30,Home,True,False,50
+15,Plate Set,100,Home,True,False,10
+16,Chicken,10,Grocery,False,True,30
+17,Beef,20,Grocery,False,True,20
+18,Pork,15,Grocery,False,True,25
+19,Fish,12,Grocery,False,True,20
+20,Eggs,3,Grocery,False,True,100

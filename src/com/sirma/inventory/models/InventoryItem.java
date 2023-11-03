@@ -1,7 +1,7 @@
 package com.sirma.inventory.models;
 
 public class InventoryItem extends AbstractItem {
-    private String itemID; // Unique identifier for each inventory item
+    private String itemID;
     private int quantity; // Quantity of the item in inventory
 
     public InventoryItem(String id, String name, double price, String itemID, int quantity) {
@@ -9,6 +9,14 @@ public class InventoryItem extends AbstractItem {
         this.itemID = itemID;
         this.quantity = quantity;
     }
+
+    public InventoryItem(String id, String name, double price, String category, boolean isBreakable, boolean isPerishable, int quantity) {
+        super(id, name, price, category, isBreakable, isPerishable);
+        this.itemID = id; // Use 'id' to set 'itemID'
+        this.quantity = quantity;
+    }
+
+
 
     // Getters and setters for itemID and quantity
     public String getItemID() {
@@ -29,13 +37,29 @@ public class InventoryItem extends AbstractItem {
 
     public String toCSV() {
         // Convert the attributes of InventoryItem to a CSV formatted string
-        return String.join(",", itemID, getName(), String.valueOf(getPrice()), String.valueOf(quantity));
+        return String.join(",",
+                getItemID(),
+                getName(),
+                String.valueOf(getPrice()),
+                getCategory(),
+                String.valueOf(isBreakable()),
+                String.valueOf(isPerishable()),
+                String.valueOf(getQuantity())
+        );
     }
 
     public static InventoryItem fromCSV(String csv) {
-        // Split the CSV formatted string and create a new InventoryItem
         String[] attributes = csv.split(",");
-        return new InventoryItem(attributes[0], attributes[1], Double.parseDouble(attributes[2]), attributes[0], Integer.parseInt(attributes[3]));
+
+        String itemID = attributes[0];
+        String name = attributes[1];
+        double price = Double.parseDouble(attributes[2]);
+        String category = attributes[3];
+        boolean isBreakable = Boolean.parseBoolean(attributes[4]);
+        boolean isPerishable = Boolean.parseBoolean(attributes[5]);
+        int quantity = Integer.parseInt(attributes[6]);
+
+        return new InventoryItem(itemID, name, price, category, isBreakable, isPerishable, quantity);
     }
 
     @Override

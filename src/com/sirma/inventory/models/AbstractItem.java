@@ -16,6 +16,15 @@ public abstract class AbstractItem implements Item, Categorizable, Breakable, Pe
         this.price = price;
     }
 
+    public AbstractItem(String id, String name, double price, String category, boolean isBreakable, boolean isPerishable) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+        this.isBreakable = isBreakable;
+        this.isPerishable = isPerishable;
+    }
+
     @Override
     public String getDetails() {
         return String.format("ID: %s, Name: %s, Price: %.2f", id, name, price);

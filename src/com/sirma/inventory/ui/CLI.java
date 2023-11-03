@@ -29,6 +29,7 @@ public class CLI {
         System.out.println("1. Add Item");
         System.out.println("2. Remove Item");
         System.out.println("3. Display Items");
+        System.out.println("4. Orders... --- TODO");
         System.out.println("4. Exit");
         System.out.print("Enter choice: ");
     }
@@ -64,15 +65,32 @@ public class CLI {
 
         System.out.print("Price: ");
         double price = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
+
+        System.out.print("Category: ");
+        String category = scanner.nextLine();
+
+        System.out.print("Is the item breakable? (true/false): ");
+        boolean isBreakable = scanner.nextBoolean();
+        scanner.nextLine(); // Consume newline
+
+        System.out.print("Is the item perishable? (true/false): ");
+        boolean isPerishable = scanner.nextBoolean();
+        scanner.nextLine(); // Consume newline
 
         System.out.print("Quantity: ");
         int quantity = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
 
-        InventoryItem newItem = new InventoryItem(itemID, name, price, itemID, quantity);
+        InventoryItem newItem = new InventoryItem(itemID, name, price, category, isBreakable, isPerishable, quantity);
         inventory.add(newItem);
+
+        // Save the updated inventory to the file
+        FileIOUtility.saveInventoryToFile(inventory, "src/com/sirma/inventory/ui/data.csv");
 
         System.out.println("Item added successfully!");
     }
+
 
     private void removeItem() {
         System.out.print("Enter the Item ID of the item to remove: ");
@@ -88,6 +106,7 @@ public class CLI {
 
         if (itemToRemove != null) {
             inventory.remove(itemToRemove);
+            FileIOUtility.saveInventoryToFile(inventory, "src/com/sirma/inventory/ui/data.csv");
             System.out.println("Item removed successfully!");
         } else {
             System.out.println("Item not found.");
@@ -165,6 +184,5 @@ public class CLI {
             }
         }
     }
-
 
 }
